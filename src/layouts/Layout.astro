@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const POSTER =
+  'https://customer-wa9cpywo3l4jte5c.cloudflarestream.com/7dfc12e750d2d5beef3d4e2ca75329df/thumbnails/thumbnail.jpg?time=&height=600';
+
+const {
+  title = 'BWax.pro | Brazilian Wax Professional — $100,000',
+  description = 'BWax.pro is the professional domain for Brazilian wax. Short category name on a .pro TLD. Offered at $100,000.',
+  ogImage = POSTER,
+  canonical = 'https://bwax.pro/',
+} = Astro.props;
+
+const siteName = 'BWax.pro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Brazilian wax professional, BWax.pro, Brazilian waxing, hard wax, professional wax studio" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href={canonical} />
+    <meta name="google-site-verification" content="Y2Xyu8qbsoR_kA1xQDZ9_T-pmNnJR6DCkcJR0eSUh7E" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#16100e" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": siteName,
+      "url": "https://bwax.pro",
+      "description": description
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": title,
+      "description": description,
+      "url": canonical,
+      "datePublished": "2026-09-16",
+      "dateModified": "2026-09-16"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BWax.pro",
+      "description": "Professional domain for Brazilian wax on the .pro TLD.",
+      "url": "https://bwax.pro",
+      "brand": { "@type": "Brand", "name": "BWax.pro" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://bwax.pro/#acquisition",
+        "price": "100000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Desert Rich", "email": "sales@desertrich.com" }
+      }
+    })} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>
