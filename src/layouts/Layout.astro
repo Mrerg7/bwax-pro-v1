@@ -12,8 +12,8 @@ const POSTER =
   'https://customer-wa9cpywo3l4jte5c.cloudflarestream.com/7dfc12e750d2d5beef3d4e2ca75329df/thumbnails/thumbnail.jpg?time=&height=600';
 
 const {
-  title = 'BWax.pro | Brazilian Wax Professional — $100,000',
-  description = 'BWax.pro is the professional domain for Brazilian wax. Short category name on a .pro TLD. Offered at $100,000.',
+  title = 'BWax.pro | Premium Domain for Sale | $100,000',
+  description = 'Buy BWax.pro, a premium .pro domain for Brazilian wax professionals. Available for $100,000 with confidential transfer support.',
   ogImage = POSTER,
   canonical = 'https://bwax.pro/',
 } = Astro.props;
@@ -29,9 +29,10 @@ const siteName = 'BWax.pro';
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Brazilian wax professional, BWax.pro, Brazilian waxing, hard wax, professional wax studio" />
+    <meta name="keywords" content="buy .pro domains, domain marketplace, premium domain names, investment domains, BWax.pro for sale, Brazilian wax domain" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://customer-wa9cpywo3l4jte5c.cloudflarestream.com" />
     <meta name="google-site-verification" content="Y2Xyu8qbsoR_kA1xQDZ9_T-pmNnJR6DCkcJR0eSUh7E" />
 
     <meta property="og:type" content="website" />
@@ -59,12 +60,22 @@ const siteName = 'BWax.pro';
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Desert Rich",
+      "url": "https://bwax.pro",
+      "email": "sales@desertrich.com",
+      "logo": "https://bwax.pro/favicon.svg",
+      "description": "Premium domain names for ambitious brands."
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "WebPage",
       "name": title,
       "description": description,
       "url": canonical,
       "datePublished": "2026-09-16",
-      "dateModified": "2026-09-16"
+      "dateModified": "2026-10-12",
+      "isPartOf": { "@type": "WebSite", "name": siteName, "url": "https://bwax.pro" }
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -80,7 +91,8 @@ const siteName = 'BWax.pro';
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "seller": { "@type": "Organization", "name": "Desert Rich", "email": "sales@desertrich.com" }
-      }
+      },
+      "category": "Premium domain name"
     })} />
   </head>
   <body class="min-h-screen flex flex-col">

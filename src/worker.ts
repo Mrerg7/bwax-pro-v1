@@ -39,6 +39,20 @@ export default {
       });
     }
 
-    return response;
+    const headers = new Headers(response.headers);
+    headers.set('X-Content-Type-Options', 'nosniff');
+    headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+    headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+    headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    if (url.pathname.startsWith('/_astro/')) {
+      headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (url.pathname === '/' || url.pathname.endsWith('.html')) {
+      headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
+    }
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
   },
 };
