@@ -64,7 +64,7 @@ const siteName = 'BWax.pro';
       "description": description,
       "url": canonical,
       "datePublished": "2026-09-16",
-      "dateModified": "2026-09-16"
+      "dateModified": "2026-11-16"
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -72,6 +72,7 @@ const siteName = 'BWax.pro';
       "name": "BWax.pro",
       "description": "Professional domain for Brazilian wax on the .pro TLD.",
       "url": "https://bwax.pro",
+      "image": [ogImage],
       "brand": { "@type": "Brand", "name": "BWax.pro" },
       "offers": {
         "@type": "Offer",
@@ -79,7 +80,41 @@ const siteName = 'BWax.pro';
         "price": "100000",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Desert Rich", "email": "sales@desertrich.com" }
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": { "@type": "Organization", "name": "Desert Rich", "email": "sales@desertrich.com" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://bwax.pro/#acquisition"
+        }
       }
     })} />
   </head>
